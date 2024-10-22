@@ -26,7 +26,7 @@ class ContestDates:
 			return []
 		contests = [c for c in contests if c.get('startTimeSeconds', -1) >= start]
 		contests = [c for c in contests if c.get('startTimeSeconds', -1) <= end]
-		addContestIds = [1586]
+		addContestIds = [2022, 2027, 2030]
 		filteredcontests = [c for c in contests if isValidCFContestName(c['name']) or c['id'] in addContestIds]
 		filteredcontests = [c for c in filteredcontests if len(
 				[c2 for c2 in contests if c2.get('startTimeSeconds', -1) == c.get('startTimeSeconds', -1)]) == 1 or c['id'] in addContestIds]
