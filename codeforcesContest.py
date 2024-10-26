@@ -29,7 +29,7 @@ class CodeforcesContest(Contest):
 
 	def updateScores(self):
 		print("fetching scores for CF contest ", self.id)
-		cfStandings = cfApi.request("contest.standings", {"contestId": self.id})
+		cfStandings = cfApi.request("contest.standings", {"contestId": self.id, "participantTypes": "CONTESTANT,OUT_OF_COMPETITION"})
 		if cfStandings is False:
 			return
 		self.name = getName(cfStandings["contest"]["name"])
